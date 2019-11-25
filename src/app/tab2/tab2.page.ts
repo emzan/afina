@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +10,22 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  loaded: boolean = false;
+  displayedColumns: string[] = [];
+  dataSource: MatTableDataSource<AnimationPlayState>;
+  symbol = 'AAPL';
+  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/MSFT';
+  dcf: any ;
+
+
+  constructor(private http: HttpClient) {
+
+    this.http.get<any>(this.url).subscribe(data => {
+    
+
+      this.dcf = data.DCF;
+      
+    })
+  }
 
 }
