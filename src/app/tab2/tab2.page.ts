@@ -13,9 +13,11 @@ export class Tab2Page {
   loaded: boolean = false;
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
-  symbol = 'AAPL';
-  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/MSFT';
+  symbol: any ;
+  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/AAPL';
   dcf: any ;
+  stockprice: any ;
+  date: any;
 
 
   constructor(private http: HttpClient) {
@@ -24,6 +26,9 @@ export class Tab2Page {
     
 
       this.dcf = data.DCF;
+      this.stockprice = data["Stock Price"];
+      this.date = data.date;
+      this.symbol = data.symbol;
       
     })
   }
