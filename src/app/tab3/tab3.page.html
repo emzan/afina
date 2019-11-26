@@ -9,7 +9,7 @@
 <ion-content>
   <ion-list lines="none">
     <ion-list-header>
-      <ion-label *ngIf="perc >= 1">
+      <ion-label color="success" *ngIf="perc >= 1">
         BUY!
       </ion-label>
     </ion-list-header>
@@ -29,8 +29,12 @@
       <ion-icon slot="start" color="medium" name="clock"></ion-icon>
       <ion-label><div class="contain-stock">When: <br>$ {{date}}</div></ion-label>
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="ineff == 0" color="secondary">
       <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+      <ion-label><div class="contain-stock">Inefficiency: <br>$ {{ineff | number : '1.2'}}</div></ion-label>
+    </ion-item>
+    <ion-item *ngIf="ineff >= 0">
+      <ion-icon slot="start" color="success" name="color-fill"></ion-icon>
       <ion-label><div class="contain-stock">Inefficiency: <br>$ {{ineff | number : '1.2'}}</div></ion-label>
     </ion-item>
     <ion-item>
@@ -44,4 +48,7 @@
   </ion-list>
  
  
+
+
+  
 </ion-content>
