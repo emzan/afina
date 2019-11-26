@@ -21,7 +21,8 @@ export class Tab2Page {
   ineff: any;
   perc: any;
   zero: any;
-  
+  uno: any;
+  percuno: any;
   
 
   
@@ -38,11 +39,15 @@ export class Tab2Page {
       this.symbol = data.symbol;
       this.ineff = this.dcf - this.stockprice;
       this.zero = this.dcf / 100;
-      this.perc = this.ineff / this.zero
+      this.perc = this.ineff / this.zero;
+      this.uno = this.stockprice / 100;
+      this.percuno = this.ineff / this.uno
       
       
       
     })
   }
+
+  
 
 }

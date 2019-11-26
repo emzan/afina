@@ -22,7 +22,8 @@ export class Tab3Page {
   ineff: any;
   perc: any;
   zero: any;
-  
+  uno: any;
+  percuno: any;
   
 
   
@@ -39,7 +40,9 @@ export class Tab3Page {
       this.symbol = data.symbol;
       this.ineff = this.dcf - this.stockprice;
       this.zero = this.dcf / 100;
-      this.perc = this.ineff / this.zero
+      this.perc = this.ineff / this.zero;
+      this.uno = this.stockprice / 100;
+      this.percuno = this.ineff / this.uno
       
       
       
