@@ -18,6 +18,11 @@ export class Tab2Page {
   dcf: any ;
   stockprice: any ;
   date: any;
+  ineff: any;
+  
+  
+
+  
 
 
   constructor(private http: HttpClient) {
@@ -29,6 +34,8 @@ export class Tab2Page {
       this.stockprice = data["Stock Price"];
       this.date = data.date;
       this.symbol = data.symbol;
+      this.ineff = this.dcf - this.stockprice
+      
       
     })
   }
