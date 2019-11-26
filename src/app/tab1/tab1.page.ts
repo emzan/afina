@@ -14,7 +14,7 @@ export class Tab1Page {
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
   symbol: any ;
-  url = 'https://financialmodelingprep.com/api/v3/company/historical-discounted-cash-flow/AAPL';
+  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/EXLS';
   dcf: any ;
   stockprice: any ;
   date: any;
