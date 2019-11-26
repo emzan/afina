@@ -14,11 +14,13 @@ export class Tab2Page {
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
   symbol: any ;
-  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/AAPL';
+  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/AMZN';
   dcf: any ;
   stockprice: any ;
   date: any;
   ineff: any;
+  perc: any;
+  zero: any;
   
   
 
@@ -34,7 +36,10 @@ export class Tab2Page {
       this.stockprice = data["Stock Price"];
       this.date = data.date;
       this.symbol = data.symbol;
-      this.ineff = this.dcf - this.stockprice
+      this.ineff = this.dcf - this.stockprice;
+      this.zero = this.dcf / 100;
+      this.perc = this.ineff / this.zero
+      
       
       
     })
