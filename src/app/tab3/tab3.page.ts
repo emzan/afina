@@ -1,9 +1,11 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, ChangeDetectionStrategy} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { HttpClient } from '@angular/common/http';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-tab3',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
@@ -17,25 +19,29 @@ export class Tab3Page implements OnInit {
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private ref: ChangeDetectorRef) {
 
     this.http.get<any>(this.url).subscribe(data => {
       this.financialStatement = data.symbolsList.slice(0,500);
       this.createdDisplayComlumn(this.financialStatement[0]);
+      
 
      
       this.loaded =true;
     })
   }
 
+
   ngOnInit() {
     setTimeout(() => {
       this.dataSource = new MatTableDataSource(this.financialStatement);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      //this.ref.markForCheck();
     },1000);
     
   }
+
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
