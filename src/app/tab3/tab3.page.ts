@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page implements OnInit {
+export class Tab3Page  implements OnInit{
   loaded: boolean = false;
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
@@ -35,6 +35,8 @@ export class Tab3Page implements OnInit {
     },1000);
     
   }
+
+  
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
