@@ -11,6 +11,7 @@ describe('Tab3Page', () => {
     TestBed.configureTestingModule({
       declarations: [Tab3Page],
       imports: [IonicModule.forRoot()]
+    
     }).compileComponents();
 
     fixture = TestBed.createComponent(Tab3Page);

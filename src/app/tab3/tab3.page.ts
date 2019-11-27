@@ -5,7 +5,7 @@ import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-tab3',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush ,
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
@@ -24,7 +24,7 @@ export class Tab3Page implements OnInit {
     this.http.get<any>(this.url).subscribe(data => {
       this.financialStatement = data.symbolsList.slice(0,500);
       this.createdDisplayComlumn(this.financialStatement[0]);
-      
+      this.dataSource = new MatTableDataSource(this.financialStatement);
 
      
       this.loaded =true;
