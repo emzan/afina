@@ -5,11 +5,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import { MatTableModule, MatPaginatorModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
+    HttpClientModule, 
     MatTableModule,
     MatPaginatorModule,
     FormsModule,
