@@ -15,6 +15,8 @@ export class Tab1Page {
   dataSource: MatTableDataSource<AnimationPlayState>;
   symbol: any ;
   url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/EXLS';
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
   dcf: any ;
   stockprice: any ;
   date: any;

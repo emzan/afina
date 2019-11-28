@@ -29,26 +29,23 @@
       <ion-icon slot="start" color="medium" name="clock"></ion-icon>
       <ion-label><div class="contain-stock">When: <br>$ {{date}}</div></ion-label>
     </ion-item>
-    <ion-item *ngIf="ineff == 0" color="secondary">
+    <ion-item *ngIf="ineff == 0">
       <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
       <ion-label><div class="contain-stock">Inefficiency: <br>$ {{ineff | number : '1.2'}}</div></ion-label>
     </ion-item>
-    <ion-item *ngIf="ineff >= 0">
+    <ion-item *ngIf="ineff > 0">
       <ion-icon slot="start" color="success" name="color-fill"></ion-icon>
       <ion-label><div class="contain-stock">Inefficiency: <br>$ {{ineff | number : '1.2'}}</div></ion-label>
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="ineff > 0">
       <ion-icon slot="start" color="medium" name="beaker"></ion-icon>
       <ion-label><div class="contain-stock">Discount from dcf: <br>{{perc | number : '1.2'}} %</div></ion-label>
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="ineff > 0">
       <ion-icon slot="start" color="medium" name="flask"></ion-icon>
       <ion-label><div class="contain-stock">Added to stock: <br>{{percuno | number : '1.2'}} %</div></ion-label>
     </ion-item>
   </ion-list>
  
  
-
-
-  
 </ion-content>
