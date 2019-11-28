@@ -37,7 +37,7 @@ export class Tab3Page implements OnInit {
       this.dataSource = new MatTableDataSource(this.financialStatement);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      //this.ref.markForCheck();
+      this.ref.markForCheck();
     },1000);
     
   }
