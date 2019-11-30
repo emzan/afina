@@ -13,9 +13,9 @@ export class Tab3Page implements OnInit {
   loaded: boolean = false;
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
-  symbol = 'AAPL';
+  symbol = 'JPM';
  
-  url = 'https://financialmodelingprep.com/api/v3/company/stock/list';
+  url = 'https://financialmodelingprep.com/api/v3/financials/income-statement/JPM?period=quarter';
   financialStatement: any = [];
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
@@ -23,7 +23,7 @@ export class Tab3Page implements OnInit {
   constructor(private http: HttpClient) {
 
     this.http.get<any>(this.url).subscribe(data => {
-      this.financialStatement = data.symbolsList.slice(0,500);
+      this.financialStatement = data.financials;
       this.createdDisplayComlumn(this.financialStatement[0]);
       this.dataSource = new MatTableDataSource(this.financialStatement);
 

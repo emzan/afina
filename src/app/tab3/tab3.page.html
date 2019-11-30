@@ -2,7 +2,13 @@
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field> -->
 
-
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{symbol}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <div class="mat-elevation-z8 contain-table" *ngIf="loaded">
   <table mat-table [dataSource]="dataSource" matSort>
