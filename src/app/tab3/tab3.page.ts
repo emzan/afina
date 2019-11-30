@@ -13,8 +13,8 @@ export class Tab3Page implements OnInit {
   loaded: boolean = false;
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
-  symbol = 'JPM';
-  url = 'https://financialmodelingprep.com/api/v3/company-key-metrics/JPM';
+  symbol = 'GS';
+  url = 'https://financialmodelingprep.com/api/v3/company-key-metrics/GS';
   //url = 'https://financialmodelingprep.com/api/v3/financials/income-statement/JPM?';
   
   financialStatement: any = [];

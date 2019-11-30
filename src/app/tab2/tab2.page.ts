@@ -14,7 +14,7 @@ export class Tab2Page {
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
   symbol: any ;
-  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/JPM';
+  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/GS';
   dcf: any ;
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
