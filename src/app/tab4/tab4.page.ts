@@ -4,19 +4,18 @@ import { HttpClient } from '@angular/common/http';
 //import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
-  selector: 'app-tab3',
+  selector: 'app-tab4',
  // changeDetection: ChangeDetectionStrategy.OnPush ,
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  templateUrl: 'tab4.page.html',
+  styleUrls: ['tab4.page.scss']
 })
-export class Tab3Page implements OnInit {
+export class Tab4Page implements OnInit {
   loaded: boolean = false;
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
-  symbol = 'JPM';
-  url = 'https://financialmodelingprep.com/api/v3/company-key-metrics/JPM';
-  //url = 'https://financialmodelingprep.com/api/v3/financials/income-statement/JPM?';
-  
+  symbol = 'BAC-JPM-AXP';
+ 
+  url = 'https://financialmodelingprep.com/api/company/price/BAC,JPM,AXP?datatype=json';
   financialStatement: any = [];
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
@@ -24,9 +23,8 @@ export class Tab3Page implements OnInit {
   constructor(private http: HttpClient) {
 
     this.http.get<any>(this.url).subscribe(data => {
-     // this.financialStatement = data.financials;
-      //this.financialStatement = Object.values(data);
-      this.financialStatement = data.metrics;
+      
+      this.financialStatement = Object.values(data);
       this.createdDisplayComlumn(this.financialStatement[0]);
       this.dataSource = new MatTableDataSource(this.financialStatement);
 
