@@ -19,7 +19,7 @@ export class Tab1Page {
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   dcf: any ;
   stockprice: any ;
-  date: any;
+  date: any; 
   ineff: any;
   perc: any;
   zero: any;
