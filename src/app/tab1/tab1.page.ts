@@ -14,7 +14,7 @@ export class Tab1Page {
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
   symbol: any ;
-  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/BAC';
+  url = 'https://financialmodelingprep.com/api/v3/company/discounted-cash-flow/GS';
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   dcf: any ;
