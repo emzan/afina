@@ -13,9 +13,9 @@ export class Tab4Page implements OnInit {
   loaded: boolean = false;
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<AnimationPlayState>;
-  symbol = 'BAC-JPM-AXP';
+  symbol = 'BAC-GS-AXP';
  
-  url = 'https://financialmodelingprep.com/api/company/price/BAC,JPM,AXP?datatype=json';
+  url = 'https://financialmodelingprep.com/api/company/price/BAC,GS,AXP?datatype=json';
   financialStatement: any = [];
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
