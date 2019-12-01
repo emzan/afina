@@ -16,6 +16,7 @@ export class Tab4Page implements OnInit {
   symbol = 'BAC-JPM-GS';
  
   url = 'https://financialmodelingprep.com/api/company/price/BAC,JPM,GS?datatype=json';
+
   financialStatement: any = [];
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
